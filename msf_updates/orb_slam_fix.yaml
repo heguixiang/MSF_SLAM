@@ -1,0 +1,56 @@
+
+#/pose_sensor/core/data_playback: true
+/pose_sensor/core/data_playback: false
+/pose_sensor/core/fixed_bias: false
+
+#########IMU PARAMETERS#######
+######## Asctec Firefly IMU
+#/msf_viconpos_sensor/core/core_noise_acc: 0.083
+#/msf_viconpos_sensor/core/core_noise_accbias: 0.0083
+#/msf_viconpos_sensor/core/core_noise_gyr: 0.0013
+#/msf_viconpos_sensor/core/core_noise_gyrbias: 0.00013
+/msf_viconpos_sensor/core/core_noise_acc: 2.000e-3
+/msf_viconpos_sensor/core/core_noise_accbias: 3.000e-3
+/msf_viconpos_sensor/core/core_noise_gyr: 1.6968e-4
+/msf_viconpos_sensor/core/core_noise_gyrbias: 1.9393e-5
+
+#/msf_viconpos_sensor/pose_sensor/fixed_scale: 1
+/msf_viconpos_sensor/pose_sensor/pose_noise_scale: 0.0
+/msf_viconpos_sensor/pose_sensor/pose_noise_p_wv: 0.0
+/msf_viconpos_sensor/pose_sensor/pose_noise_q_wv: 0.0
+/msf_viconpos_sensor/pose_sensor/pose_noise_q_ic: 0.0
+/msf_viconpos_sensor/pose_sensor/pose_noise_p_ic: 0.0
+#/msf_viconpos_sensor/pose_sensor/pose_delay: 0.002
+/msf_viconpos_sensor/pose_sensor/pose_delay: 0.05
+/msf_viconpos_sensor/pose_sensor/pose_noise_meas_p: 0.005
+/msf_viconpos_sensor/pose_sensor/pose_noise_meas_q: 0.005
+
+/msf_viconpos_sensor/pose_sensor/init/q_ic/w:  0.7123014607
+/msf_viconpos_sensor/pose_sensor/init/q_ic/x: -0.007707179756
+/msf_viconpos_sensor/pose_sensor/init/q_ic/y: 0.01049932337
+/msf_viconpos_sensor/pose_sensor/init/q_ic/z: 0.7017528003
+
+/msf_viconpos_sensor/pose_sensor/init/p_ic/x: -0.0216401454975
+/msf_viconpos_sensor/pose_sensor/init/p_ic/y: -0.064676986768
+/msf_viconpos_sensor/pose_sensor/init/p_ic/z: 0.00981073058949
+
+/msf_viconpos_sensor/pose_sensor/init/q_wv/w: 0.457892
+/msf_viconpos_sensor/pose_sensor/init/q_wv/x: 0.685473
+/msf_viconpos_sensor/pose_sensor/init/q_wv/y: 0.459740
+/msf_viconpos_sensor/pose_sensor/init/q_wv/z: -0.330312
+#/msf_viconpos_sensor/pose_sensor/init/p_wv/x: -0.933918977751798
+#/msf_viconpos_sensor/pose_sensor/init/p_wv/y: -0.38914756369614073
+#/msf_viconpos_sensor/pose_sensor/init/p_wv/z: -0.4781832385774061
+
+#/msf_viconpos_sensor/pose_sensor/pose_fixed_scale: true
+/msf_viconpos_sensor/pose_sensor/pose_fixed_scale: false
+/msf_viconpos_sensor/pose_sensor/pose_fixed_p_ic: true
+/msf_viconpos_sensor/pose_sensor/pose_fixed_q_ic: true
+/msf_viconpos_sensor/pose_sensor/pose_fixed_p_wv: false
+/msf_viconpos_sensor/pose_sensor/pose_fixed_q_wv: false
+ 
+/msf_viconpos_sensor/pose_sensor/pose_absolute_measurements: true
+/msf_viconpos_sensor/pose_sensor/pose_use_fixed_covariance: true
+/msf_viconpos_sensor/pose_sensor/pose_measurement_world_sensor: false  # selects if sensor measures its position w.r.t. world (true, e.g. Vicon) or the position of the world coordinate system w.r.t. the sensor (false, e.g. ethzasl_ptam
+
+/msf_viconpos_sensor/pose_sensor/pose_measurement_minimum_dt: 0.05  # Sets the minimum time in seconds between two pose measurements.

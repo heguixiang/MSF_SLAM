@@ -1,0 +1,17 @@
+<launch>
+    <node name="msf_viconpos_sensor" pkg="msf_updates" type="pose_sensor" clear_params="true" output="screen">
+
+		<!--remap from="msf_core/hl_state_input" to="/fcu/ekf_state_out" /-->
+		<!--remap from="msf_core/correction" to="/fcu/ekf_state_in" /-->
+		<!--remap from="msf_updates/transform_input" to="/vicon/robot_name/robot_name" /-->
+	    <!--remap from="msf_updates/sub_euler_ground_truth" to="/vicon/firefly_sbx/firefly_sbx" /-->
+	    <!--remap from="msf_updates/sub_euler_ground_truth" to="/leica/position" /-->
+		<remap from="msf_updates/sub_euler_ekf" to="/msf_core/state_out" />
+		<remap from="msf_updates/sub_euler_slam" to="Orb_transform" />
+		<!--remap from="msf_updates/leika_measurement" to="/leica/position" /-->
+		<remap from="msf_core/imu_state_input" to="/imu0" />
+		<remap from="msf_updates/transform_input" to="/Orb_transform" />
+		<rosparam file="$(find msf_updates)/orb_slam_fix.yaml"/>
+    </node>
+	<node pkg="rosservice" type="rosservice" name="initialize" args="call --wait /msf_viconpos_sensor/pose_sensor/initialize_msf_scale 0.32"/> 
+</launch>
